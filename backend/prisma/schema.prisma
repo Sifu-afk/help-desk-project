@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL") // e.g.  "file:./dev.db"
+}
+
+model User {
+  id         Int     @id @default(autoincrement())
+  username   String  @unique
+  email      String  @unique
+  password   String
+  role       Role    @default(USER)
+
+  tickets  Ticket[]
+  comments Comment[]
+}
+
+model Ticket {
+  id          Int      @id @default(autoincrement())
+  user_id     Int
+  description String
+  status      Status   @default(OPEN)
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+  priority    Priority  @default(LOW) 
+
+  user     User      @relation(fields: [user_id], references: [id])
+  comments Comment[] @relation("TicketComments")
+}
+
+model Comment {
+  id         Int      @id @default(autoincrement())
+  message    String
+  ticket_id  Int
+  user_id    Int
+  created_at DateTime @default(now())
+
+  ticket Ticket @relation("TicketComments", fields: [ticket_id], references: [id])
+  user   User   @relation(fields: [user_id], references: [id])
+}
+
+enum Status {
+  OPEN
+  IN_PROGRESS
+  UNDER_REVIEW
+  CLOSED
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}

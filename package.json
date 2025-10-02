@@ -1,0 +1,22 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"node db-prisma\" \"cd todo-front && npm run dev\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@prisma/adapter-better-sqlite3": "^6.16.2",
+    "@prisma/client": "^6.16.2",
+    "concurrently": "^9.2.1",
+    "react-router-dom": "^7.9.3"
+  },
+  "devDependencies": {
+    "prisma": "^6.16.2"
+  }
+}

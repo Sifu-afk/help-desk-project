@@ -1,0 +1,14 @@
+.login-form{
+    display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	max-width: 250px;
+	height: 100vh;
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid black;
+}
+.login-form--title{
+    color: aliceblue;
+}

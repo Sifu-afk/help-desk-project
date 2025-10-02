@@ -1,0 +1,6 @@
+@import '../src/stylesheets/variable.css';
+@import '../src/stylesheets/pages/landing.css';
+@import '../src/stylesheets/pages/login.css';
+@import '../src/stylesheets/pages/register.css';
+@import '../src/stylesheets/pages/home.css';
+@import '../src/stylesheets/background.css';

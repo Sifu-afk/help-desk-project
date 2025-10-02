@@ -1,0 +1,31 @@
+.landing-form {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	max-width: 250px;
+	height: 100vh;
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid black;
+}
+.landing-title {
+	color: aliceblue;
+	width: 20vh;
+	margin-bottom: 1vh;
+}
+.landing-btn--login {
+	width: 10vh;
+	height: 3vh;
+	margin-bottom: 1vh;
+}
+.landing-btn--register {
+	width: 10vh;
+	height: 3vh;
+}
+
+.landing-btn--login > a, .landing-btn--register > a {
+	text-decoration: none;
+	color: inherit;
+	cursor: default;
+}
